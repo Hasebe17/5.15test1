@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.icon {
+			width: 35px;
+			height: 35px;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+	</style>
+	<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav">
+            <h1 class="mui-title" >糖医</h1>
+        </header>
+	<div>
+	<nav id="bar" class="mui-bar mui-bar-tab iconfont" >
+		<a class="mui-tab-item mui-active" href="index_main.html" data-id="main">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-zhuyeact"></use>
+			</svg>
+			<span class="mui-tab-label"><h4 style="color:#1296db">主页</h4></span>
+		</a>
+		
+		<!-- <a class="mui-tab-item" onclick="openSleep()"> -->
+		<a class="mui-tab-item" href="sleep.html" data-id="sleep">
+			<!-- <span class="iconfont icon-shuimian"></span> -->
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-shuimian"></use>
+			</svg>
+			<span class="mui-tab-label"><h4>睡眠</h4></span>
+		</a>
+		
+		<!-- <a class="mui-tab-item" href="blood_main_head.html"  onclick="openBlood()"> -->
+			<a class="mui-tab-item" href="blood_main.html" data-id="blood">
+			<!-- <span class="iconfont icon-iconxt"></span> -->
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-iconxt"></use>
+			</svg>
+			<span class="mui-tab-label" ><h4 >血糖</h4></span>
+		</a>
+		
+		<!-- <a class="mui-tab-item" href="mine_head.html" onclick="openMine()"> 
+		 -->
+			 <a class="mui-tab-item" href="mine.html" data-id="mine">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-wode"></use>
+			</svg>
+			<span class="mui-tab-label" ><h4>我的</h4></span>
+		</a>
+	</nav>
+	</div>
+<script>
+            mui.init();
+            mui.plusReady(function() {
+                var self = plus.webview.currentWebview();
+                var current = '';
+                var styles = {
+                    top: '60px',
+                    bottom: '85px'
+                };
+                var tabsConfig = {
+                    main: {
+                        url: 'index_main.html',
+                        styles: styles,
+                        default: true
+                    },
+                    sleep: {
+                        url: 'sleep.html',
+                        styles: styles
+                    },
+                    blood: {
+                        url: 'blood_main.html',
+                        styles: styles
+                    },
+                    mine: {
+                        url: 'mine.html',
+                        styles: styles
+                    }
+                };
+                var tabs = {};
+                for (id in tabsConfig) {
+                    tabs[id] = plus.webview.create(tabsConfig[id].url, id, tabsConfig[id].styles);
+                    if (tabsConfig[id]['default']) {
+                        self.append(tabs[id]);
+                        current = id;
+                    }
+                }
+                mui('#bar').on('tap', 'a', function(e) {
+                    if (current == this.dataset.id) {
+                        return;
+                    }
+                    tabs[this.dataset.id].show();
+                    tabs[current].hide();
+                    current = this.dataset.id;
+                });
+            });
+        </script>
+
+</body>
+</html>
