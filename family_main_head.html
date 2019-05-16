@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.icon {
+			width: 35px;
+			height: 35px;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+	</style>
+	
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<!-- <script type="text/javascript">
+		//打开引导
+		var firstGuide = localStorage.getItem("guide");
+		if(firstGuide != "yes"){
+			window.location.href='register.html'; //启动引导页
+		}
+	</script> -->
+		<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>
+</head>
+
+<body>
+	
+	<header class="mui-bar mui-bar-nav">
+            <h1 class="mui-title" >糖医</h1>
+        </header>
+	<div>
+	<nav id="bar" class="mui-bar mui-bar-tab iconfont" >
+		<a class="mui-tab-item mui-active" href="family_main.html" data-id="fm">
+		
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-zhuyeact"></use>
+			</svg>
+			<span class="mui-tab-label"><h4 style="color:#1296db">主页</h4></span>
+		</a>
+		
+			<a class="mui-tab-item" href="fchat.html" data-id="fc">
+			
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-xiaoxi1"></use>
+				</svg>
+				<span class="mui-tab-label" ><h4>咨讯</h4></span>
+			</a>
+		
+		<a class="mui-tab-item" href="fmine.html" data-id="fmine"> 
+			
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-wode"></use>
+			</svg>
+			<span class="mui-tab-label" ><h4>我的</h4></span>
+		</a>
+	</nav>
+	</div>
+<script>
+            mui.init();
+            mui.plusReady(function() {
+                var self = plus.webview.currentWebview();
+                var current = '';
+                var styles = {
+                    top: '60px',
+                    bottom: '85px'
+                };
+                var tabsConfig = {
+                    fm: {
+                        url: 'family_main.html',
+                        styles: styles,
+                        default: true
+                    },
+                    fc: {
+                        url: 'fchat.html',
+                        styles: styles
+                    },
+                    fmine: {
+                        url: 'fmine.html',
+                        styles: styles
+                    }
+                };
+                var tabs = {};
+                for (id in tabsConfig) {
+                    tabs[id] = plus.webview.create(tabsConfig[id].url, id, tabsConfig[id].styles);
+                    if (tabsConfig[id]['default']) {
+                        self.append(tabs[id]);
+                        current = id;
+                    }
+                }
+                mui('#bar').on('tap', 'a', function(e) {
+                    if (current == this.dataset.id) {
+                        return;
+                    }
+                    tabs[this.dataset.id].show();
+                    tabs[current].hide();
+                    current = this.dataset.id;
+                });
+            });
+        </script>
+
+
+</body>
+</html>

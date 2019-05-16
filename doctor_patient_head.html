@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 本页面作为doc的主页面 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.icon {
+			width: 35px;
+			height: 35px;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+	</style>
+			<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>
+</head>
+
+<body>
+	
+	<header class="mui-bar mui-bar-nav">
+            <h1 class="mui-title" >糖医</h1>
+        </header>
+	<div>
+	<nav id="bar" class="mui-bar mui-bar-tab iconfont" >
+		<a class="mui-tab-item mui-active" href="doctor_patient.html" data-id="dp">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-brguanliact"></use>
+			</svg>
+			<span class="mui-tab-label"><h4 style="color:#1296db">病人管理</h4></span>
+		</a>
+		
+		<a class="mui-tab-item" href="doctor_abnormal.html" data-id="da">
+			<!-- <span class="iconfont icon-shuimian"></span> -->
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-yichang"></use>
+			</svg>
+			<span class="mui-tab-label"><h4>异常管理</h4></span>
+		</a>
+		
+		<a class="mui-tab-item" href="doctor_msg.html" data-id="dm" >
+			<!-- <span class="iconfont icon-iconxt"></span> -->
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-xiaoxi"></use>
+			</svg>
+			<span class="mui-tab-label" ><h4>消息</h4></span>
+		</a>
+		
+		<a class="mui-tab-item" href="doctor_mine.html" data-id="dmine"> 
+			
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-wode"></use>
+			</svg>
+			<span class="mui-tab-label" ><h4 >我的</h4></span>
+		</a>
+	</nav>
+	</div>
+<script>
+            mui.init();
+            mui.plusReady(function() {
+                var self = plus.webview.currentWebview();
+                var current = '';
+                var styles = {
+                    top: '60px',
+                    bottom: '85px'
+                };
+                var tabsConfig = {
+                    dp: {
+                        url: 'doctor_patient.html',
+                        styles: styles,
+                        default: true
+                    },
+                    da: {
+                        url: 'doctor_abnormal.html',
+                        styles: styles
+                    },
+                    dm: {
+                        url: 'doctor_msg.html',
+                        styles: styles
+                    },
+                    dmine: {
+                        url: 'doctor_mine.html',
+                        styles: styles
+                    }
+                };
+                var tabs = {};
+                for (id in tabsConfig) {
+                    tabs[id] = plus.webview.create(tabsConfig[id].url, id, tabsConfig[id].styles);
+                    if (tabsConfig[id]['default']) {
+                        self.append(tabs[id]);
+                        current = id;
+                    }
+                }
+                mui('#bar').on('tap', 'a', function(e) {
+                    if (current == this.dataset.id) {
+                        return;
+                    }
+                    tabs[this.dataset.id].show();
+                    tabs[current].hide();
+                    current = this.dataset.id;
+                });
+            });
+        </script>
+</body>
+</html>
