@@ -11,16 +11,8 @@
       	mui.init();
     </script>
 	<link rel="stylesheet" type="text/css" href="css/common.css"/>
-		<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
-		<style>
-			.icon {
-			width: 35px;
-			height: 35px;
-			vertical-align: -0.15em;
-			fill: currentColor;
-			overflow: hidden;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="fonts/font_1/iconfont.css"/>
+	
 			<script type="text/javascript">  
 		 if(window.localStorage){  
 		 var un = localStorage.getItem("username");  
@@ -38,33 +30,26 @@
 	<div>
 	<nav id="bar" class="mui-bar mui-bar-tab iconfont" >
 		<a class="mui-tab-item mui-active" href="doctor_patient.html" data-id="dp">
-			<svg class="icon" aria-hidden="true">
-				<use xlink:href="#icon-brguanliact"></use>
-			</svg>
-			<span class="mui-tab-label"><h4 style="color:#1296db">病人管理</h4></span>
+			<span class="mui-icon iconfont icon-bingrenguanli" style="font-size: xx-large;text-align: center;width: 50%;">
+			<span class="mui-tab-label" ><h4 >病人</h4></span>
 		</a>
 		
 		<a class="mui-tab-item" href="doctor_abnormal.html" data-id="da">
-			<!-- <span class="iconfont icon-shuimian"></span> -->
-			<svg class="icon" aria-hidden="true">
-				<use xlink:href="#icon-yichang"></use>
-			</svg>
-			<span class="mui-tab-label"><h4>异常管理</h4></span>
+			<span class="mui-icon iconfont icon-brguanli" style="font-size: xx-large;text-align: center;width: 50%;">
+			
+			<span class="mui-tab-label"><h4>异常</h4></span>
 		</a>
 		
 		<a class="mui-tab-item" href="doctor_msg.html" data-id="dm" >
-			<!-- <span class="iconfont icon-iconxt"></span> -->
-			<svg class="icon" aria-hidden="true">
-				<use xlink:href="#icon-xiaoxi"></use>
-			</svg>
+			<span class="mui-icon iconfont icon-xiaoxi1" style="font-size: xx-large;text-align: center;width: 50%;">
+			
 			<span class="mui-tab-label" ><h4>消息</h4></span>
 		</a>
 		
 		<a class="mui-tab-item" href="doctor_mine.html" data-id="dmine"> 
 			
-			<svg class="icon" aria-hidden="true">
-				<use xlink:href="#icon-wode"></use>
-			</svg>
+			<span class="mui-icon iconfont icon-wode" style="font-size: xx-large;text-align: center;width: 50%;">
+			
 			<span class="mui-tab-label" ><h4 >我的</h4></span>
 		</a>
 	</nav>
