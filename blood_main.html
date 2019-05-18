@@ -8,7 +8,12 @@
 <link href="css/mui.min.css" rel="stylesheet"/>
 <link href="css/blood/bs_main.css" rel="stylesheet"/>
 <script type="text/javascript" charset="utf-8">
-      	mui.init(); 
+      	mui.init();
+		if(window.localStorage){  
+		var un = localStorage.getItem("username");  
+		var pas = localStorage.getItem("password");  
+		//alert(un+pas);  
+		}else{alert("浏览不支持localStorage")} 
     </script>
 <script src="js/jquery-1.11.0.min.js"></script>
 </head>
@@ -81,6 +86,7 @@
 		{}
 	    });
 	}
+
 	function openMeals(){
 		mui.openWindow({
 		url    : 'blood_meals.html',
