@@ -103,6 +103,25 @@
 												<!-- <iframe id="myFrame" src="doc_tanchuang.html" style="width:auto;height:40px;"></iframe>
 											 -->
 											<div id="chosesku1" style="background: #FFFFFF; width: 90%;left: 5%;" class="chosesku box mui-popover mui-popover-action mui-popover-bottom">
+												<script>
+													
+														window.localStorage["a"]=1;
+													    var a = localStorage.getItem("a"); 
+														
+															$.ajax({
+																	 url:"http://203.195.148.111:8080/index/index/med",
+																	
+																	 data:{a:a},
+																	 
+																	success: function(data){
+																	  var arr1 = data.split("|");
+																	 $("#med1").html(arr1[0]);
+																	 $("#med2").html(arr1[1]);
+																	 $("#med3").html(arr1[2]);
+																	     }
+														         });
+													
+												</script>
 												<div class="choseskuimg" >
 													<img style="margin: 10px ;border-radius: 5px; width: 70px;" src="images/touxiang.jpg"/>
 													
@@ -117,15 +136,15 @@
 												<h4 style="margin-left: 5px;margin-top: 30px;">推荐药品:</h4>
 												<div class="mui-content mui-active">
 													<div class="mui-input-row mui-checkbox mui-left">
-													  <label>盐酸二甲双胍</label>
+													  <label id="med1">盐酸二甲双胍</label>
 													  <input name="checkbox" value="盐酸二甲双胍" type="checkbox" checked >
 													</div>
 													<div class="mui-input-row mui-checkbox mui-left">
-													  <label>盐酸吡格列酮分散片</label>
+													  <label id="med2">盐酸吡格列酮分散片</label>
 													  <input name="checkbox" value="盐酸吡格列酮分散片" type="checkbox" checked >
 													</div>
 													<div class="mui-input-row mui-checkbox mui-left">
-													  <label>胰岛素注射</label>
+													  <label id="med3">胰岛素注射</label>
 													  <input name="checkbox" value="胰岛素注射" type="checkbox" checked >
 													</div>
 													</div>
@@ -175,6 +194,25 @@
 		                                        	
 		                                        </p>
 												<div id="chosesku2" style="background: #FFFFFF; width: 90%;left: 5%;" class="chosesku box mui-popover mui-popover-action mui-popover-bottom">
+													<script>
+													
+														window.localStorage["a"]=2;
+													    var a = localStorage.getItem("a"); 
+														
+															$.ajax({
+																	 url:"http://203.195.148.111:8080/index/index/med",
+																	
+																	 data:{a:a},
+																	 
+																	success: function(data){
+																	  var arr1 = data.split("|");
+																	 $("#med1").html(arr1[0]);
+																	 $("#med2").html(arr1[1]);
+																	 $("#med3").html(arr1[2]);
+																	     }
+														         });
+													
+												</script>
 													<div class="choseskuimg" >
 														<img style="margin: 10px ;border-radius: 5px; width: 70px;" src="images/touxiang.jpg"/>
 														
@@ -189,15 +227,15 @@
 													<h4 style="margin-left: 5px;margin-top: 30px;">推荐药品:</h4>
 													<div class="mui-content mui-active">
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸二甲双胍</label>
+														  <label id="med1">盐酸二甲双胍</label>
 														  <input name="checkbox" value="盐酸二甲双胍" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸吡格列酮分散片</label>
+														  <label id="med2">盐酸吡格列酮分散片</label>
 														  <input name="checkbox" value="盐酸吡格列酮分散片" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>胰岛素注射</label>
+														  <label id="med3">胰岛素注射</label>
 														  <input name="checkbox" value="胰岛素注射" type="checkbox" checked >
 														</div>
 														</div>
@@ -246,6 +284,25 @@
 		                                        	
 		                                        </p>
 												<div id="chosesku3" style="background: #FFFFFF; width: 90%;left: 5%;" class="chosesku box mui-popover mui-popover-action mui-popover-bottom">
+													<script>
+													
+														window.localStorage["a"]=3;
+													    var a = localStorage.getItem("a"); 
+														
+															$.ajax({
+																	 url:"http://203.195.148.111:8080/index/index/med",
+																	
+																	 data:{a:a},
+																	 
+																	success: function(data){
+																	  var arr1 = data.split("|");
+																	 $("#med1").html(arr1[0]);
+																	 $("#med2").html(arr1[1]);
+																	 $("#med3").html(arr1[2]);
+																	     }
+														         });
+													
+												</script>
 													<div class="choseskuimg" >
 														<img style="margin: 10px ;border-radius: 5px; width: 70px;" src="images/touxiang.jpg"/>
 														
@@ -260,15 +317,15 @@
 													<h4 style="margin-left: 5px;margin-top: 30px;">推荐药品:</h4>
 													<div class="mui-content mui-active">
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸二甲双胍</label>
+														  <label id="med1">盐酸二甲双胍</label>
 														  <input name="checkbox" value="盐酸二甲双胍" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸吡格列酮分散片</label>
+														  <label id="med2">盐酸吡格列酮分散片</label>
 														  <input name="checkbox" value="盐酸吡格列酮分散片" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>胰岛素注射</label>
+														  <label id="med3">胰岛素注射</label>
 														  <input name="checkbox" value="胰岛素注射" type="checkbox" checked >
 														</div>
 														</div>
@@ -316,6 +373,25 @@
 								                	
 								                </p>
 												<div id="chosesku4" style="background: #FFFFFF; width: 90%;left: 5%;" class="chosesku box mui-popover mui-popover-action mui-popover-bottom">
+													<script>
+													
+														window.localStorage["a"]=4;
+													    var a = localStorage.getItem("a"); 
+														
+															$.ajax({
+																	 url:"http://203.195.148.111:8080/index/index/med",
+																	
+																	 data:{a:a},
+																	 
+																	success: function(data){
+																	  var arr1 = data.split("|");
+																	 $("#med1").html(arr1[0]);
+																	 $("#med2").html(arr1[1]);
+																	 $("#med3").html(arr1[2]);
+																	     }
+														         });
+													
+												</script>
 													<div class="choseskuimg" >
 														<img style="margin: 10px ;border-radius: 5px; width: 70px;" src="images/touxiang.jpg"/>
 														
@@ -330,15 +406,15 @@
 													<h4 style="margin-left: 5px;margin-top: 30px;">推荐药品:</h4>
 													<div class="mui-content mui-active">
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸二甲双胍</label>
+														  <label id="med1">盐酸二甲双胍</label>
 														  <input name="checkbox" value="盐酸二甲双胍" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸吡格列酮分散片</label>
+														  <label id="med2">盐酸吡格列酮分散片</label>
 														  <input name="checkbox" value="盐酸吡格列酮分散片" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>胰岛素注射</label>
+														  <label id="med3">胰岛素注射</label>
 														  <input name="checkbox" value="胰岛素注射" type="checkbox" checked >
 														</div>
 														</div>
@@ -386,6 +462,25 @@
 								                	
 								                </p>
 												<div id="chosesku5" style="background: #FFFFFF; width: 90%;left: 5%;" class="chosesku box mui-popover mui-popover-action mui-popover-bottom">
+													<script>
+													
+														window.localStorage["a"]=5;
+													    var a = localStorage.getItem("a"); 
+														
+															$.ajax({
+																	 url:"http://203.195.148.111:8080/index/index/med",
+																	
+																	 data:{a:a},
+																	 
+																	success: function(data){
+																	  var arr1 = data.split("|");
+																	 $("#med1").html(arr1[0]);
+																	 $("#med2").html(arr1[1]);
+																	 $("#med3").html(arr1[2]);
+																	     }
+														         });
+													
+												</script>
 													<div class="choseskuimg" >
 														<img style="margin: 10px ;border-radius: 5px; width: 70px;" src="images/touxiang.jpg"/>
 														
@@ -400,15 +495,15 @@
 													<h4 style="margin-left: 5px;margin-top: 30px;">推荐药品:</h4>
 													<div class="mui-content mui-active">
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸二甲双胍</label>
+														  <label id="med1">盐酸二甲双胍</label>
 														  <input name="checkbox" value="盐酸二甲双胍" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>盐酸吡格列酮分散片</label>
+														  <label id="med2">盐酸吡格列酮分散片</label>
 														  <input name="checkbox" value="盐酸吡格列酮分散片" type="checkbox" checked >
 														</div>
 														<div class="mui-input-row mui-checkbox mui-left">
-														  <label>胰岛素注射</label>
+														  <label id="med3">胰岛素注射</label>
 														  <input name="checkbox" value="胰岛素注射" type="checkbox" checked >
 														</div>
 														</div>
