@@ -49,7 +49,9 @@
 			function getCheckBoxValues() {
                 var ele = document.getElementsByName("checkbox");
                 for (var i = 0; i < ele.length; i++) {
-                    mui.alert(ele[i].value + ": " + ele[i].checked)
+					var yaowu = ele[i].value;
+					var TFyaowu = ele[i].checked;
+                    mui.alert("已经将药物推荐给病人！")
                 }
             }
 
