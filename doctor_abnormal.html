@@ -106,12 +106,12 @@
 												<script>
 													
 														window.localStorage["a"]=1;
-													    var a = localStorage.getItem("a"); 
-														
+													    
+													    var username1 = document.getElementById("patient1").innerHTML;
 															$.ajax({
 																	 url:"http://203.195.148.111:8080/index/index/med",
 																	
-																	 data:{a:a},
+																	 data:{a:username1},
 																	 
 																	success: function(data){
 																	  var arr1 = data.split("|");
@@ -197,12 +197,11 @@
 													<script>
 													
 														window.localStorage["a"]=2;
-													    var a = localStorage.getItem("a"); 
-														
+													   var username2 = document.getElementById("patient2").innerHTML;
 															$.ajax({
 																	 url:"http://203.195.148.111:8080/index/index/med",
 																	
-																	 data:{a:a},
+																	 data:{a:username2},
 																	 
 																	success: function(data){
 																	  var arr1 = data.split("|");
@@ -287,12 +286,11 @@
 													<script>
 													
 														window.localStorage["a"]=3;
-													    var a = localStorage.getItem("a"); 
-														
+													    var username3 = document.getElementById("patient3").innerHTML;
 															$.ajax({
 																	 url:"http://203.195.148.111:8080/index/index/med",
 																	
-																	 data:{a:a},
+																	 data:{a:username3},
 																	 
 																	success: function(data){
 																	  var arr1 = data.split("|");
@@ -376,12 +374,11 @@
 													<script>
 													
 														window.localStorage["a"]=4;
-													    var a = localStorage.getItem("a"); 
-														
+													    var username4 = document.getElementById("patient4").innerHTML;
 															$.ajax({
 																	 url:"http://203.195.148.111:8080/index/index/med",
 																	
-																	 data:{a:a},
+																	 data:{a:username4},
 																	 
 																	success: function(data){
 																	  var arr1 = data.split("|");
@@ -465,12 +462,11 @@
 													<script>
 													
 														window.localStorage["a"]=5;
-													    var a = localStorage.getItem("a"); 
-														
+													   var username5 = document.getElementById("patient5").innerHTML;
 															$.ajax({
 																	 url:"http://203.195.148.111:8080/index/index/med",
 																	
-																	 data:{a:a},
+																	 data:{a:username5},
 																	 
 																	success: function(data){
 																	  var arr1 = data.split("|");
