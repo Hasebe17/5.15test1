@@ -46,13 +46,25 @@
 		<script src="js/mui.js"></script>
 		<script type="text/javascript">
 			mui.init()
-			function getCheckBoxValues() {
+				function getCheckBoxValues() {
                 var ele = document.getElementsByName("checkbox");
-                for (var i = 0; i < ele.length; i++) {
-					var yaowu = ele[i].value;
-					var TFyaowu = ele[i].checked;
-                    mui.alert("已经将药物推荐给病人！")
-                }
+				var username1 = document.getElementById("patient1").innerHTML;
+				var med="";
+                 for(var i = 0; i < ele.length; i++){
+                 if(ele[i].checked)
+                  {med=med+ele[i].value+" "}
+				  }
+				 
+				$.ajax({
+						 url:"http://203.195.148.111:8080/index/index/mimsg",
+						
+						 data:{dna:un,pna:username1,body:med},
+						 
+						success: function(data){
+						  alert("发送成功")
+						     }
+				     });
+                
             }
 
             mui.ready(function() {
