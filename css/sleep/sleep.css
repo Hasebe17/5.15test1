@@ -38,8 +38,8 @@
 	width: 100px;
 	height:100px;
 	position: absolute;
-	top: 410px;
-	left: 80px;
+	top: 60%;
+	left: 12%;
 	text-align: center;
 }
 
@@ -47,8 +47,8 @@
 	width: 100px;
 	height:100px;
 	position: absolute;
-	top: 410px;
-	right: 80px;
+	top: 60%;
+	right:12%;
 	text-align: center;
 	}
 
