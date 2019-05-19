@@ -101,10 +101,17 @@
 		{}
 		});
 	}
+    $.ajax({
+				 url:"http://203.195.148.111:8080/index/index/medpimsg",
+				 data:{un:un},
+				 
+				success: function(data){
+				 var arr1 = data.split("|");
+				 $("#imsg").html("推荐用药："+arr1[0]);
+			  }
+	         });
     var dna = localStorage.getItem("dna");
     $("#dna").html(dna);
-    var msg = localStorage.getItem("msg");
-    $("#imsg").html(msg);
 	
 </script>
 </html>
