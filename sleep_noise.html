@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.css" rel="stylesheet" />
 		<script src="js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="fonts/font_1/iconfont.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/sleep/whitenoise.css"/>
 			<script type="text/javascript">  
@@ -16,6 +17,13 @@
 		 //alert(un+pas);  
 		 }else{alert("浏览不支持localStorage")}  
 	</script>
+	<style type="text/css">
+		.iconfont {
+			text-align:center;
+			font-size:16px;
+			color:dodgerblue;
+		}
+	</style>
 	</head>
 
 	<body>
@@ -23,32 +31,132 @@
 		<script type="text/javascript">
 			mui.init()
 		</script>
+		<script type="text/javascript">
+			
+			function getRadioValue(){
+				var radios = document.getElementsByName("radios");
+				var value;
+				for(var i=0;i<radios.length;i++){
+					if(radios[i].checked){
+						value = radios[i].value;
+						break;					
+				}
+			}					
+			return value;
+			}
+				
+				
+			 mui.ready(function() {
+		        document.getElementById('submit').addEventListener('tap',function () {
+					if(window.localStorage){
+						if("bzy"){
+							localStorage.removeItem("bzy");
+						}
+						var bzy = getRadioValue();
+					 	localStorage.setItem("bzy",bzy);
+					}else{alert("浏览不支持localStorage")}	
+		                var bzy = getRadioValue();						
+						mui.back()
+		    })
+			})
+		</script>
 		
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ></a>
 			<h1 class="mui-title">白噪音选择</h1>
+			<audio src='http://www.170mv.com/kw/sc.sycdn.kuwo.cn/resource/n3/66/87/2109456229.mp3' preload='auto' id='music1'>	
+			</audio>
+			
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n3/89/30/3036184166.mp3' preload='auto' id='music2'>	
+			</audio>
+			
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/83/36/746410993.mp3' preload='auto' id='music3'>	
+			</audio>
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n2/89/62/1919834502.mp3' preload='auto' id='music4'>	
+			</audio>
+			<audio src='http://www.170mv.com/kw/sq.sycdn.kuwo.cn/resource/n3/0/17/1962406227.mp3' preload='auto' id='music5'>	
+			</audio>
+			
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/75/11/4096201377.mp3' preload='auto' id='music6'>	
+			</audio>
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/58/47/1362729054.mp3' preload='auto' id='music7'>	
+			</audio>
 		</header>
 		
-		<div id="noisechiose">
-			<form  action="sleep.html" method="get" style="margin-top: 80px;">
-				<center>
-					<label for="n1"><input id="n1" type="radio" value="1" name="nchose">点击试试1</label><br/>
-					<label for="n2"><input id="n2" type="radio" value="2" name="nchose">点击试试2</label><br/>
-					<label for="n3"><input id="n3" type="radio" value="3" name="nchose">点击试试3</label><br/>
-					<label for="n4"><input id="n4" type="radio" value="4" name="nchose">点击试试4</label><br/>
-					<label for="n5"><input id="n5" type="radio" value="5" name="nchose">点击试试5</label><br/>
-					<label for="n6"><input id="n6" type="radio" value="6" name="nchose">点击试试6</label><br/>
-					<label for="n7"><input id="n7" type="radio" value="7" name="nchose">点击试试7</label>			
-				</center>
+		<div id="noisechiose" >
+			<form  action="sleep.html" method="get" style="margin-top: 80px; margin-left: 25px;margin-right: 25px;">
+				
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;width: auto;" for="n0">
+							<input class="radioItem" id="n0" type="radio" value="0" name="radios" style="width: 25px;">静音
+							<i class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:210px;"></i>
+						</label>
+						<hr>
+					</div>
+					
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;" for="n1">
+							<input class="radioItem" id="n1" type="radio" value="1" name="radios" style="width: 25px;">点击试试1
+							<i id="bofang" class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:150px;"></i>
+						</label>
+						<hr >
+					</div>
+					
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;" for="n2">
+							<input class="radioItem" id="n2" type="radio" value="2" name="radios" style="width: 25px;">点击试试2
+							<i class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:150px;"></i>
+						</label>
+						<hr >
+					</div>
+					
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;" for="n3">
+							<input class="radioItem" id="n3" type="radio" value="3" name="radios" style="width: 25px;">点击试试3
+							<i class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:150px;"></i>
+						</label>
+						<hr >
+					</div>
+					
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;" for="n4">
+							<input class="radioItem" id="n4" type="radio" value="4" name="radios" style="width: 25px;">点击试试4
+							<i class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:150px;"></i>
+						</label>
+						<hr >
+					</div>
+					
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;" for="n5">
+							<input class="radioItem" id="n5" type="radio" value="5" name="radios" style="width: 25px;">点击试试5
+							<i class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:150px;"></i>
+						</label>
+						<hr >
+					</div>
+					
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;" for="n6">
+							<input class="radioItem" id="n6" type="radio" value="6" name="radios" style="width: 25px;">点击试试6
+							<i class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:150px;"></i>
+						</label>
+						<hr >
+					</div>
+					
+					<div style="padding: 10px;">
+						<label style="font-size: x-large ;" for="n7">
+							<input class="radioItem" id="n7" type="radio" value="7" name="radios" style="width: 25px;">点击试试7
+							<i class="mui-icon iconfont icon-bofang" style="font-size: x-large;padding-left:150px;"></i>
+						</label>
+						<hr >
+					</div>
+					
 			</form>
 		</div>
 		
-		<button type="button" class="ncBtn selfmotion">自动播放</button>
-		<button type="button" class="ncBtn motion">播放</button>
-		<button type="button" class="ncBtn close">定时关闭</button>
-		
+		<input type="button" style=" margin-top: 20px;background: dodgerblue;left: 50%;width: 60px;margin-left: -30px;" name="submit" id="submit" value="确定" />
 	</body>
 
+<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	function openSleep(){
 	    mui.openWindow({
@@ -58,5 +166,37 @@
 	    });
 	}
 </script>
+<script type="text/javascript">	
+	$(".radioItem").change(
+		function() {
+		var id = $("input[name='radios']:checked").val();
+		if (id == 1) {
+			if(!music1.play()){music1.play();}
+		}else if (id == 2){
+			if(!music2.play()){music2.play();}
+		}else if(id == 3){
+			if(!music3.play()){music3.play();}
+		}else if(id == 4){
+			if(!music4.play()){music4.play();}
+		}else if(id == 5){
+			if(!music5.play()){music5.play();}
+		}else if(id == 6){
+			if(!music6.play()){music6.play();}
+		}else if(id == 7){
+			if(!music7.play()){music7.play();}
+		}else{
+				music1.pause();
+				music2.pause();
+				music3.pause();
+				music4.pause();
+				music5.pause();
+				music6.pause();
+				music7.pause();
+		}
+	});
+
+	
+</script>	
+
 
 </html>
