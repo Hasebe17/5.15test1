@@ -32,6 +32,9 @@
 						var defaT = localStorage.getItem("defatime");
 						var naoxing = localStorage.getItem("nx");
 						var naozhong = localStorage.getItem("nz");
+					    var bzy = localStorage.getItem("bzy");
+						
+						
 					}else{alert("浏览不支持localStorage")};
 	</script>
 	<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
@@ -74,6 +77,25 @@
 			</audio>
 			<audio src='http://hao.haolingsheng.com/ring/000/995/bde5a74a2520d82b8ed6d51c227f383c.mp3' preload='auto' id='music5'>	
 			</audio>
+			
+			
+			<audio src='http://www.170mv.com/kw/sc.sycdn.kuwo.cn/resource/n3/66/87/2109456229.mp3' preload='auto' id='musicb1'>	
+			</audio>
+			
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n3/89/30/3036184166.mp3' preload='auto' id='musicb2'>	
+			</audio>
+			
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/83/36/746410993.mp3' preload='auto' id='musicb3'>	
+			</audio>
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n2/89/62/1919834502.mp3' preload='auto' id='musicb4'>	
+			</audio>
+			<audio src='http://www.170mv.com/kw/sq.sycdn.kuwo.cn/resource/n3/0/17/1962406227.mp3' preload='auto' id='musicb5'>	
+			</audio>
+			
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/75/11/4096201377.mp3' preload='auto' id='musicb6'>	
+			</audio>
+			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/58/47/1362729054.mp3' preload='auto' id='musicb7'>	
+			</audio>
 		</header>
 		
 		<article class="htmleaf-container">
@@ -97,7 +119,8 @@
 		<button type="button" class="returnreport" onclick="openReport()">返回报告</button>
 		
 		<script>
-			var arr = defaT.split(":");
+			
+			var arr = defaT .split(":");
 			var sethour = arr[0];
 			var setmin = arr[1];
 			if(setmin<naoxing*5){
@@ -110,6 +133,33 @@
 			}
 			var stop = document.getElementById("stopBtn");
 			window.onload=function(){
+			
+			function toPlay(){
+				if (bzy == 1) {
+					if(!musicb1.play()){musicb1.play();}
+				}else if (bzy == 2){
+					if(!musicb2.play()){musicb2.play();}
+				}else if(bzy == 3){
+					if(!musicb3.play()){musicb3.play();}
+				}else if(bzy == 4){
+					if(!musicb4.play()){musicb4.play();}
+				}else if(bzy == 5){
+					if(!musicb5.play()){musicb5.play();}
+				}else if(bzy == 6){
+					if(!musicb6.play()){musicb6.play();}
+				}else if(bzy == 7){
+					if(!musicb7.play()){musicb7.play();}
+				}else{
+				musicb1.pause();
+				musicb2.pause();
+				musicb3.pause();
+				musicb4.pause();
+				musicb5.pause();
+				musicb6.pause();
+				musicb7.pause();
+		}
+			}
+			toPlay();
 			function showTime(){
 				var time=new Date();
 				var minute=time.getMinutes();
@@ -151,7 +201,9 @@
 				music3.pause();
 				music4.pause();
 				music5.pause();}//同理
+				
 			}
+
 			showTime();
 			var timer=setInterval(showTime,1000);
 			stop.onclick=function(){
@@ -228,6 +280,13 @@
 	 function start_score(){
 	  dt=setInterval(sleepstate,2000);
 	  }
+	  
+	window.addEventListener('event', function(event){//执行刷新
+		var id = event.detail.id;
+		alert(id);
+		});
+	  
+	  
 </script>
 
 </html>
