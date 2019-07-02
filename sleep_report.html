@@ -16,7 +16,7 @@
 			if(window.localStorage){
 					 	var un = localStorage.getItem("username");
 						var pas = localStorage.getItem("password");
-						var bzy = localStorage.getItem("bzy");
+						
 						
 						//alert(un+pas);
 					}else{alert("浏览不支持localStorage")};
@@ -39,23 +39,7 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ></a>
 			<h1 class="mui-title">睡眠报告</h1>
-			<audio src='http://www.170mv.com/kw/sc.sycdn.kuwo.cn/resource/n3/66/87/2109456229.mp3' preload='auto' id='musicb1'>	
-			</audio>
 			
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n3/89/30/3036184166.mp3' preload='auto' id='musicb2'>	
-			</audio>
-			
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/83/36/746410993.mp3' preload='auto' id='musicb3'>	
-			</audio>
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n2/89/62/1919834502.mp3' preload='auto' id='musicb4'>	
-			</audio>
-			<audio src='http://www.170mv.com/kw/sq.sycdn.kuwo.cn/resource/n3/0/17/1962406227.mp3' preload='auto' id='musicb5'>	
-			</audio>
-			
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/75/11/4096201377.mp3' preload='auto' id='musicb6'>	
-			</audio>
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/58/47/1362729054.mp3' preload='auto' id='musicb7'>	
-			</audio>
 		</header>
 		
 		<div id="time" class="time" >
@@ -138,46 +122,11 @@
 		</div>
 		
 		<button onclick="openhisReport()" type="button" class="shareBtn">查看历史睡眠记录</button>
-		<!-- <a href="sleep_history_report.html" class="historyreport" ><h5>查看历史睡眠记录&#62;&#62;&#62;</h5></a> -->
+		
 		
 		
 	</body>
 	<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		window.onload=function(){
-			function toStop(){
-				if(bzy == 1){
-					if(musicb1.play()){
-					musicb1.pause();}
-				}
-				if(bzy == 2){
-					if(musicb2.play()){
-					musicb2.pause();}
-				}
-				if(bzy == 3){
-					if(musicb3.play()){
-					musicb3.pause();}
-				}
-				if(bzy == 4){
-					if(musicb4.play()){
-					musicb4.pause();}
-				}
-				if(bzy == 5){
-					if(musicb5.play()){
-					musicb5.pause();}
-				}
-				if(bzy == 6){
-					if(musicb6.play()){
-					musicb6.pause();}
-				}
-				if(bzy == 7){
-					if(musicb7.play()){
-					musicb7.pause();}
-				}
-				}
-				toStop();
-			}
-	</script>
 	
 <script type="text/javascript">
 	function openhisReport(){
