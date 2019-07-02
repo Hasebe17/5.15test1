@@ -79,22 +79,22 @@
 			</audio>
 			
 			
-			<audio src='http://www.170mv.com/kw/sc.sycdn.kuwo.cn/resource/n3/66/87/2109456229.mp3' preload='auto' id='musicb1'>	
+			<audio src='http://link.hhtjim.com/163/483507575.mp3' preload='auto' id='musicb1'>	
 			</audio>
 			
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n3/89/30/3036184166.mp3' preload='auto' id='musicb2'>	
+			<audio src='http://link.hhtjim.com/163/505248904.mp3' preload='auto' id='musicb2'>	
 			</audio>
 			
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/83/36/746410993.mp3' preload='auto' id='musicb3'>	
+			<audio src='http://link.hhtjim.com/163/517354280.mp3' preload='auto' id='musicb3'>	
 			</audio>
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n2/89/62/1919834502.mp3' preload='auto' id='musicb4'>	
+			<audio src='http://link.hhtjim.com/163/526367571.mp3' preload='auto' id='musicb4'>	
 			</audio>
-			<audio src='http://www.170mv.com/kw/sq.sycdn.kuwo.cn/resource/n3/0/17/1962406227.mp3' preload='auto' id='musicb5'>	
+			<audio src='http://link.hhtjim.com/163/483877904.mp3' preload='auto' id='musicb5'>	
 			</audio>
 			
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/75/11/4096201377.mp3' preload='auto' id='musicb6'>	
+			<audio src='http://link.hhtjim.com/163/485861685.mp3' preload='auto' id='musicb6'>	
 			</audio>
-			<audio src='http://www.170mv.com/kw/sp.sycdn.kuwo.cn/resource/n1/58/47/1362729054.mp3' preload='auto' id='musicb7'>	
+			<audio src='http://link.hhtjim.com/163/483780870.mp3' preload='auto' id='musicb7'>	
 			</audio>
 		</header>
 		
@@ -103,9 +103,9 @@
 				<div class="col-xs-12 fill">
 					<span id="runner"></span><br><br>
 					<div class="col-sm-10 col-sm-offset-2">
-						<div class="col-xs-4 col-sm-3 centered"><button id="stopBtn" onclick="recordtime2()"></button></div>
-						<div class="col-xs-4 col-sm-3 centered"><button id="startBtn" onclick="recordtime1();start_score()"></button></div>
-						<div class="col-xs-4 col-sm-3 centered"><button id="resetBtn"></button></div>
+						<div class="col-xs-4 col-sm-3 centered" ><button id="stopBtn" onclick="recordtime2();toStop()"></button></div>
+						<div class="col-xs-4 col-sm-3 centered"><button id="startBtn" onclick="recordtime1();start_score();toPlay()"></button></div>
+						<div class="col-xs-4 col-sm-3 centered"><button id="resetBtn" onclick="toStop()"></button></div>
 					</div>
 				</div>
 			</div>
@@ -132,22 +132,77 @@
 				setmin = setmin-5*naoxing;
 			}
 			var stop = document.getElementById("stopBtn");
-			window.onload=function(){
+
 			
 			function toPlay(){
 				if (bzy == 1) {
+					if(musicb2.play()){musicb2.pause();}
+					if(musicb3.play()){musicb3.pause();}
+					if(musicb4.play()){musicb4.pause();}
+					if(musicb5.play()){musicb5.pause();}
+					if(musicb6.play()){musicb6.pause();}
+					if(musicb7.play()){musicb7.pause();}
+					
 					if(!musicb1.play()){musicb1.play();}
-				}else if (bzy == 2){
+				}
+				else if (bzy == 2){
+					if(musicb1.play()){musicb1.pause();}
+					if(musicb3.play()){musicb3.pause();}
+					if(musicb4.play()){musicb4.pause();}
+					if(musicb5.play()){musicb5.pause();}
+					if(musicb6.play()){musicb6.pause();}
+					if(musicb7.play()){musicb7.pause();}
+					
 					if(!musicb2.play()){musicb2.play();}
-				}else if(bzy == 3){
+				}
+				else if(bzy == 3){
+					if(musicb1.play()){musicb1.pause();}
+					if(musicb2.play()){musicb2.pause();}
+					if(musicb4.play()){musicb4.pause();}
+					if(musicb5.play()){musicb5.pause();}
+					if(musicb6.play()){musicb6.pause();}
+					if(musicb7.play()){musicb7.pause();}
+					
 					if(!musicb3.play()){musicb3.play();}
-				}else if(bzy == 4){
+				}
+				else if(bzy == 4){
+					if(musicb1.play()){musicb1.pause();}
+					if(musicb3.play()){musicb3.pause();}
+					if(musicb2.play()){musicb2.pause();}
+					if(musicb5.play()){musicb5.pause();}
+					if(musicb6.play()){musicb6.pause();}
+					if(musicb7.play()){musicb7.pause();}
+					
 					if(!musicb4.play()){musicb4.play();}
-				}else if(bzy == 5){
+				}
+				else if(bzy == 5){
+					if(musicb1.play()){musicb1.pause();}
+					if(musicb3.play()){musicb3.pause();}
+					if(musicb4.play()){musicb4.pause();}
+					if(musicb2.play()){musicb2.pause();}
+					if(musicb6.play()){musicb6.pause();}
+					if(musicb7.play()){musicb7.pause();}
+					
 					if(!musicb5.play()){musicb5.play();}
-				}else if(bzy == 6){
+				}
+				else if(bzy == 6){
+					if(musicb1.play()){musicb1.pause();}
+					if(musicb3.play()){musicb3.pause();}
+					if(musicb4.play()){musicb4.pause();}
+					if(musicb5.play()){musicb5.pause();}
+					if(musicb2.play()){musicb2.pause();}
+					if(musicb7.play()){musicb7.pause();}
+					
 					if(!musicb6.play()){musicb6.play();}
-				}else if(bzy == 7){
+				}
+				else if(bzy == 7){
+					if(musicb1.play()){musicb1.pause();}
+					if(musicb3.play()){musicb3.pause();}
+					if(musicb4.play()){musicb4.pause();}
+					if(musicb5.play()){musicb5.pause();}
+					if(musicb6.play()){musicb6.pause();}
+					if(musicb2.play()){musicb2.pause();}
+					
 					if(!musicb7.play()){musicb7.play();}
 				}else{
 				musicb1.pause();
@@ -159,7 +214,16 @@
 				musicb7.pause();
 		}
 			}
-			toPlay();
+			function toStop(){
+				musicb1.pause();
+				musicb2.pause();
+				musicb3.pause();
+				musicb4.pause();
+				musicb5.pause();
+				musicb6.pause();
+				musicb7.pause();
+			}
+			window.onload=function(){
 			function showTime(){
 				var time=new Date();
 				var minute=time.getMinutes();
