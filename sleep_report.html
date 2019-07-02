@@ -137,8 +137,9 @@
 			</center>
 		</div>
 		
-		<button type="button" class="shareBtn">将报告发送给医生/家属</button>
-		<a href="sleep_history_report.html" class="historyreport" ><h5>查看历史睡眠记录&#62;&#62;&#62;</h5></a>
+		<button onclick="openhisReport()" type="button" class="shareBtn">查看历史睡眠记录</button>
+		<!-- <a href="sleep_history_report.html" class="historyreport" ><h5>查看历史睡眠记录&#62;&#62;&#62;</h5></a> -->
+		
 		
 	</body>
 	<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
@@ -177,5 +178,15 @@
 				toStop();
 			}
 	</script>
+	
+<script type="text/javascript">
+	function openhisReport(){
+	    mui.openWindow({
+		url    : 'sleep_history_report.html',
+		extras :
+		{}
+	    });
+	}
+</script>
 
 </html>
