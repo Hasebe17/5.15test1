@@ -309,27 +309,44 @@
 		  });
 	}
 		
-    function recordtime1(){
-		var time = new Date();
-        var checktime = 5;
-        $.ajax({
-			url:"http://203.195.148.111:8080/index/index/begin",
-			withCredentials:true,
-			data: {username:un },
-				 
-         });
+   function recordtime1(){
+		var btime = new Date();
+		var btime=btime.toLocaleTimeString('chinese', { hour12: false }); 
+		//localStorage.setItem(name,value);
+		btime=btime.substring(0,5)
+		var date = new Date();
+        var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var day = date.getDate();
+		var hour = date.getHours();
+		var minute = date.getMinutes();
+		var second = date.getSeconds();
+		btimes=year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second
+        localStorage.setItem("btime",btime);
+		localStorage.setItem("btimes",btimes);
 	}
 	
 	function recordtime2(){
-		    var time = new Date();
-	        var checktime = 5;
-	        $.ajax({
-				 url:"http://203.195.148.111:8080/index/index/end",
-				 withCredentials:true,
-				 data: {username:un },
+		    var etime = new Date();
+		    var etime=etime.toLocaleTimeString('chinese', { hour12: false }); 
+		    //localStorage.setItem(name,value);
+		    etime=etime.substring(0,5)
+		    var date = new Date();
+		    var year = date.getFullYear();
+		    var month = date.getMonth()+1;
+		    var day = date.getDate();
+		    var hour = date.getHours();
+		    var minute = date.getMinutes();
+		    var second = date.getSeconds();
+		    etimes=year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second
+		    localStorage.setItem("etime",etime);
+		    localStorage.setItem("etimes",etimes);
+	    //     $.ajax({
+				 // url:"http://203.195.148.111:8080/index/index/end",
+				 // withCredentials:true,
+				 // data: {username:un },
 				
-	        });
-	}
+	        }
 	function sleepstate(){
 	        $.ajax({url:"http://203.195.148.111:8080/index/index/aiclock",
 			data: {dt1:dt1,dt2:dt2,dt3:dt3,dt4:dt4,dt5:dt5,dt6:dt6},
@@ -339,7 +356,19 @@
 				}
 				})
 	         }
-	 
+	  function newsleeptime(){
+		     btime=localStorage.getItem("btime");
+			 btimes=localStorage.getItem("btimes");
+			 etime=localStorage.getItem("etime");
+			 etimes=localStorage.getItem("etimes");
+	         $.ajax({url:"http://203.195.148.111:8080/index/index/newbetime",
+	 		data: {username:un,btime:btime,btimes:btimes,etime:etime,etimes:etimes},
+	 		
+	 		success:function(data) {
+	 			// alert(data);
+	 			}
+	 			})
+	          }
 	
 	 function start_score(){
 	  dt=setInterval(sleepstate,2000);
