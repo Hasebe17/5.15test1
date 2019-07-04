@@ -118,12 +118,30 @@
 		
 		<button type="button" class="returnreport" onclick="openReport()">返回报告</button>
 		<script>
-				var dt1=1;
-				var dt2=2;
-				var dt3=1;
-				var dt4=1;
-				var dt5=1;
-				var dt6=1;
+			 function orientationHandler(event) {
+			 alpha = event.alpha;
+			 beta = event.beta;
+			 gamma = event.gamma;
+			}
+			
+			orientationHandler(event);
+			
+			function motionHandler(event) {
+			document.getElementById("interval").innerHTML = event.interval;
+			var acc = event.acceleration;
+			var accGravity = event.accelerationIncludingGravity;
+			 xg = accGravity.x;
+			 yg = accGravity.y;
+			 zg = accGravity.z;
+				}
+			
+			motionHandler(event);
+				var dt1=alpha;
+				var dt2=beta;
+				var dt3=gamma;
+				var dt4=xg;
+				var dt5=yg;
+				var dt6=zg;
 			</script>
 		<script>
 			
