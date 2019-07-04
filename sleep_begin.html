@@ -116,7 +116,7 @@
 		<script src="js/jquery.runner-min.js"></script>
 		<script src="js/app.js"></script>
 		
-		<button type="button" class="returnreport" onclick="openReport()">返回报告</button>
+		<button type="button" class="returnreport" onclick="newsleeptime();openReport()">返回报告</button>
 		<script>
 				var dt1=1;
 				var dt2=2;
@@ -288,14 +288,7 @@
 			
 		</script>
 	</body>
-<script>
-		var dt1=1;
-		var dt2=2;
-		var dt3=1;
-		var dt4=1;
-		var dt5=1;
-		var dt6=1;
-	</script>
+
 <script type="text/javascript">
 	function openReport(){
 	    mui.openWindow({
@@ -321,7 +314,7 @@
 		  });
 	}
 		
-   function recordtime1(){
+    function recordtime1(){
 		var btime = new Date();
 		var btime=btime.toLocaleTimeString('chinese', { hour12: false }); 
 		//localStorage.setItem(name,value);
@@ -359,38 +352,29 @@
 				 // data: {username:un },
 				
 	        }
-	function sleepstate(){
-	        $.ajax({url:"http://203.195.148.111:8080/index/index/aiclock",
-			data: {dt1:dt1,dt2:dt2,dt3:dt3,dt4:dt4,dt5:dt5,dt6:dt6},
-			
-			success:function(data) {
-				// alert(data);
-				}
-				})
-	         }
-	  function newsleeptime(){
-		     btime=localStorage.getItem("btime");
-			 btimes=localStorage.getItem("btimes");
-			 etime=localStorage.getItem("etime");
-			 etimes=localStorage.getItem("etimes");
-	         $.ajax({url:"http://203.195.148.111:8080/index/index/newbetime",
-	 		data: {username:un,btime:btime,btimes:btimes,etime:etime,etimes:etimes},
-	 		
-	 		success:function(data) {
-	 			// alert(data);
-	 			}
-	 			})
-	          }
+	
+	 // function newsleeptime(){
+		//      btime=localStorage.getItem("btime");
+		// 	 btimes=localStorage.getItem("btimes");
+		// 	 etime=localStorage.getItem("etime");
+		// 	 etimes=localStorage.getItem("etimes");
+	 //         $.ajax({url:"http://203.195.148.111:8080/index/index/newbetime",
+	 // 		data: {username:un,btime:btime,btimes:btimes,etime:etime,etimes:etimes},
+	 // 		
+	 // 		success:function(data) {
+	 // 			// alert(data);
+	 // 			}
+	 // 			})
+	 //          }
 	
 	 function start_score(){
 	  dt=setInterval(sleepstate,2000);
 	  }
-	  
+	   
 	window.addEventListener('event', function(event){//执行刷新
 		var id = event.detail.id;
 		alert(id);
 		});
-	  
 	  
 </script>
 
