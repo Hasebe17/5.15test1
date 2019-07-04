@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/sleep/progresscircle.css"/>
 		<link rel="stylesheet" type="text/css" href="css/sleep/htmleaf-demo.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 	<script type="text/javascript">
 			if(window.localStorage){
 					 	var un = localStorage.getItem("username");
@@ -20,6 +21,17 @@
 						
 						//alert(un+pas);
 					}else{alert("浏览不支持localStorage")};
+			btime=localStorage.getItem("btime");
+			 btimes=localStorage.getItem("btimes");
+			 etime=localStorage.getItem("etime");
+			 etimes=localStorage.getItem("etimes");
+			 $.ajax({url:"http://203.195.148.111:8080/index/index/newbetime",
+			data: {username:un,btime:btime,btimes:btimes,etime:etime,etimes:etimes},
+			
+			success:function(data) {
+				// alert(data);
+				}
+				})
 	</script>
 			<script type="text/javascript">  
 		 if(window.localStorage){  
@@ -49,7 +61,6 @@
 			<h5 id="h51"></h5>
 			</center>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 		<script>
 			var checktime = 5;
             $.ajax({
